@@ -124,7 +124,7 @@ const Footer2 = () => {
           </div>
         </div>
       </footer>
-      <small style={{background:"gray",color:"white", fontFamily:"Open Sans"}}> &copy; Tech Studio Python Class</small>
+      <small style={{background:"gray",color:"white", fontFamily:"Open Sans"}}> &copy; designed by Oludare Nathaniel</small>
     </div>
   );
 };
