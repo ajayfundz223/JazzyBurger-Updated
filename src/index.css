@@ -6,6 +6,7 @@ body {
 }
 .App{
   margin-top: 1rem;
+  overflow-x: hidden;
 }
 /* ---------------------Home Card ------------------ */
 .card {
