@@ -22,7 +22,7 @@ const HeaderAcess = ({ cart,toCartButton}) => {
             </div>
             <p className='guest-text'>Hi,Guests</p>
             <div className='guest-image'><img src={guestVector} alt="guest-vector" className='img-fluid' style={{width:"20px"}}/></div>
-            <input type='checkbox' id='login-hover-box' className='d-none'></input>
+            {/* <input type='checkbox' id='login-hover-box' className='d-none'></input> */}
             <LoginHover/>
         </div>
         </label>

@@ -14,7 +14,7 @@ const CartPage = ({ cart, toCartButton }) => {
             <span className="cart-badge">{cart.length}</span>
             <img src={cartIcon} alt="cart-icon" className="" style={{width:"20px", marginRight:"15px"}} />
           </label>
-          <input type="checkbox" id="cart-icon" className="d-none" />
+          {/* <input type="checkbox" id="cart-icon" className="d-none" /> */}
           <div className="cart-order">
             <h3>Your Order</h3>
             {cart.length > 0 ? (
