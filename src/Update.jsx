@@ -2,8 +2,11 @@ import React, { useState } from "react";
 import "./styles/Update.css";
 import Header from "./component/Header";
 import Footer2 from "./component/Footer2";
+import { useContext } from "react";
+import { dataContextCreated } from "./contextData/DataContext";
 
-const Update = ({ cart, toCartButton }) => {
+const Update = () => {
+  const { cart } = useContext(dataContextCreated);
   const iniatialState = {
     firstName: "",
     lastName: "",
@@ -20,7 +23,7 @@ const Update = ({ cart, toCartButton }) => {
   const { firstName, lastName, email, phoneNumber } = updateData;
   return (
     <div>
-      <Header cart={cart} toCartButton={toCartButton} />
+      <Header />
       <div className="cont container-lg">
         <div className="ink">
           <h1 className="osho">

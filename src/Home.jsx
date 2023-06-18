@@ -1,15 +1,17 @@
-import React from 'react'
+import React,{useContext} from 'react'
 import Card from "./component/Card";
 import background1 from "./assets/background/image 4.png";
 import { NavLink } from "react-router-dom" 
 import heroBanner from "./assets/header/hero-img.png"
 import Header from './component/Header';
 import Footer2 from './component/Footer2';
+import { dataContextCreated } from './contextData/DataContext';
 
-const Home = ({ products,handleIncrease,handleReduce,toCartButton,cart }) => {
+const Home = () => {
+  const { products,toCartButton} = useContext(dataContextCreated)
   return (
     <div className=''>
-      <Header cart={cart} toCartButton={toCartButton} />
+      <Header/>
     <main className="container">
         <div className='hero-banner'>
             <img src={heroBanner} alt="...Banner" className='img-fluid' />
@@ -27,10 +29,7 @@ const Home = ({ products,handleIncrease,handleReduce,toCartButton,cart }) => {
         <Card
           product={product}
           key={product.id}
-          handleIncrease={handleIncrease}
-          handleReduce={handleReduce}
           toCartButton={toCartButton}
-          cart={cart}
         />
       ))}
     </div>

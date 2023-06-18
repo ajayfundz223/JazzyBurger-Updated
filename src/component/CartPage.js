@@ -3,8 +3,11 @@ import cartIcon from "../assets/vector-images/cart.png";
 import CartOrder from "./CartOrder";
 import SubTotal from "./SubTotal";
 import { useNavigate } from "react-router-dom";
+import { useContext } from "react";
+import { dataContextCreated } from "../contextData/DataContext";
 
-const CartPage = ({ cart, toCartButton }) => {
+const CartPage = () => {
+  const { cart, toCartButton } = useContext(dataContextCreated);
   const navigate = useNavigate();
   return (
     <div className="cart-page">
@@ -12,7 +15,12 @@ const CartPage = ({ cart, toCartButton }) => {
         <div className="cart-img-con">
           <label htmlFor="cart-icon">
             <span className="cart-badge">{cart.length}</span>
-            <img src={cartIcon} alt="cart-icon" className="" style={{width:"20px", marginRight:"15px"}} />
+            <img
+              src={cartIcon}
+              alt="cart-icon"
+              className=""
+              style={{ width: "20px", marginRight: "15px" }}
+            />
           </label>
           {/* <input type="checkbox" id="cart-icon" className="d-none" /> */}
           <div className="cart-order">

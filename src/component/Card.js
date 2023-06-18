@@ -3,10 +3,10 @@ import Counter from "./Counter";
 import ImgGallery from "./ImgGallery";
 import Cart from "./Cart";
 import Favourite from "./Favourite";
-const Card = ({ product, handleIncrease, handleReduce, toCartButton}) => {
+const Card = ({ product, toCartButton }) => {
   return (
-    <div className="card" onDoubleClick={()=>toCartButton(product.id)}>
-      <Favourite/>
+    <div className="card" onDoubleClick={() => toCartButton(product.id)}>
+      <Favourite />
       <img src={product.image} className="card-img-top " alt="..." />
       <div className="card-body">
         <h2 className="card-title">{product.title}</h2>
@@ -15,17 +15,13 @@ const Card = ({ product, handleIncrease, handleReduce, toCartButton}) => {
             <p class="price">Total Price</p>
             <p className="price-tag">&#8358;{product.price}.00</p>
           </div>
-          <Counter
-            product={product}
-            handleIncrease={handleIncrease}
-            handleReduce={handleReduce}
-          />
+          <Counter product={product} />
         </div>
         <div>
           <ImgGallery />
         </div>
         <div>
-          <Cart product={product} toCartButton={toCartButton}/>
+          <Cart product={product} toCartButton={toCartButton} />
         </div>
       </div>
     </div>

@@ -3,7 +3,6 @@ import loginIcon from "../assets/header/login-icon.png"
 import signUpIcon from "../assets/header/sign-up-icon.png"
 import { useNavigate } from 'react-router-dom'
 
-
 const LoginHover = () => {
   const navigate = useNavigate()
   return (

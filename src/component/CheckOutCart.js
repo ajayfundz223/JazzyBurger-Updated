@@ -1,8 +1,11 @@
 import React from "react";
 import bin from "../assets/vector-images/trash.png";
 import Counter from "./Counter";
+import { useContext } from "react";
+import { dataContextCreated } from "../contextData/DataContext";
 
-const CheckOutCart = ({ cart, handleIncrease, handleReduce, toCartButton }) => {
+const CheckOutCart = () => {
+  const { cart, toCartButton } = useContext(dataContextCreated);
   return (
     <div className="cart-order-con">
       <h3>Your order from</h3>
@@ -21,11 +24,7 @@ const CheckOutCart = ({ cart, handleIncrease, handleReduce, toCartButton }) => {
               </div>
             </div>
             <div className="order-count">
-              <Counter
-                product={product}
-                handleIncrease={handleIncrease}
-                handleReduce={handleReduce}
-              />
+              <Counter product={product} />
             </div>
           </div>
         </>

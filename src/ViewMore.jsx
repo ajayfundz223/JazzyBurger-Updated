@@ -3,11 +3,14 @@ import MoreCard from './component/MoreCard';
 import Header from './component/Header';
 import Footer2 from './component/Footer2';
 import "./component/ViewMore.css"
+import { useContext } from 'react';
+import { dataContextCreated } from './contextData/DataContext';
 
-const ViewMore = ({ products,toCartButton,cart}) => {
+const ViewMore = () => {
+  const { products,toCartButton} = useContext(dataContextCreated);
   return (
     <div>
-      <Header cart={cart} toCartButton={toCartButton} />
+      <Header/>
     <div className="container-lg">
     <div className="view-more">
     <div className="card-con">

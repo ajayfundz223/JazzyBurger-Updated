@@ -1,7 +1,9 @@
 import React from 'react'
+import { useContext } from 'react';
+import { dataContextCreated } from '../contextData/DataContext';
 
-
-const Counter = ({ product,handleIncrease,handleReduce}) => {
+const Counter = ({ product}) => {
+  const {handleIncrease,handleReduce} = useContext(dataContextCreated);
   return (
     <div className='counter'>
         <button onClick={()=>handleReduce(product.id)} >-</button>

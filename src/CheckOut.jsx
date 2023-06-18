@@ -5,11 +5,11 @@ import Footer2 from "./component/Footer2";
 import "./styles/checkout.css";
 import { useNavigate } from "react-router-dom";
 
-const CheckOut = ({ cart, toCartButton, handleIncrease, handleReduce }) => {
+const CheckOut = () => {
   const navigate = useNavigate();
   return (
     <div>
-      <Header cart={cart} toCartButton={toCartButton} />
+      <Header />
       <div className="checkout-con container-lg my-5">
         <div className="sam">
           <div className="thed mb-3">
@@ -32,12 +32,7 @@ const CheckOut = ({ cart, toCartButton, handleIncrease, handleReduce }) => {
 
           <button className="place">Place Your Order</button>
         </div>
-        <CheckOutCart
-          cart={cart}
-          handleIncrease={handleIncrease}
-          handleReduce={handleReduce}
-          toCartButton={toCartButton}
-        />
+        <CheckOutCart />
       </div>
       <Footer2 />
     </div>

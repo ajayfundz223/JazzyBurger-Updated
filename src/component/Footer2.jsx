@@ -8,7 +8,7 @@ import { FaFacebookF } from "react-icons/fa";
 import { SiInstagram } from "react-icons/si";
 import { ImTwitter } from "react-icons/im";
 import { AiOutlineYoutube } from "react-icons/ai";
-import "../styles/Footer.css"
+import "../styles/Footer.css";
 
 const Footer2 = () => {
   return (
@@ -124,7 +124,12 @@ const Footer2 = () => {
           </div>
         </div>
       </footer>
-      <small style={{background:"gray",color:"white", fontFamily:"Open Sans"}}> &copy; designed by Oludare Nathaniel</small>
+      <small
+        style={{ background: "gray", color: "white", fontFamily: "Open Sans" }}
+      >
+        {" "}
+        &copy; designed by Oludare Nathaniel
+      </small>
     </div>
   );
 };

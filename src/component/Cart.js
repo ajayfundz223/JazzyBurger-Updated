@@ -4,7 +4,12 @@ import { FaCheck } from "react-icons/fa";
 
 const Cart = ({ product, toCartButton }) => {
   return (
-    <button className="cart-btn" onClick={() => {toCartButton(product.id);}}>
+    <button
+      className="cart-btn"
+      onClick={() => {
+        toCartButton(product.id);
+      }}
+    >
       {!product.cart && (
         <>
           <div className="cart-icon">
