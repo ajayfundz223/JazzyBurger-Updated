@@ -14,7 +14,7 @@ const ViewMore = () => {
     <div className="container-lg">
     <div className="view-more">
     <div className="card-con">
-      {products.slice(6).map((product) => (
+      {products.slice(0).map((product) => (
         <MoreCard
           product={product}
           key={product.id}

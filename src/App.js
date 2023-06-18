@@ -1,4 +1,3 @@
-import { useState, useEffect } from "react";
 import Home from "./Home";
 import { Routes, Route } from "react-router-dom";
 import ViewMore from "./ViewMore";
@@ -7,26 +6,15 @@ import Signup from "./Signup";
 import Login from "./Login";
 import CheckOut from "./CheckOut";
 import Update from "./Update";
-import { DataContext } from "./contextData/DataContext";
+import { useContext } from 'react';
+import { dataContextCreated } from './contextData/DataContext';
 
 function App() {
-  const [isLoading, setIsLoading] = useState(true);
-
-  useEffect(() => {
-    const timer = setTimeout(() => {
-      setIsLoading(false);
-    }, 3000);
-
-    return () => {
-      clearTimeout(timer);
-    };
-  }, []);
-
+  const {isLoading, fetchError} = useContext(dataContextCreated)
   return (
     <div className="App ">
-      <DataContext>
         {isLoading && <LoadingPage />}
-        {!isLoading && (
+        {fetchError ?? (!isLoading && (
           <div>
             <div>
               <Routes>
@@ -39,8 +27,7 @@ function App() {
               </Routes>
             </div>
           </div>
-        )}
-      </DataContext>
+        ))}
     </div>
   );
 }

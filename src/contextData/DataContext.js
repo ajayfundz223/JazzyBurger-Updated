@@ -1,12 +1,21 @@
 import React from "react";
 import { useState, createContext, useEffect } from "react";
-import data from "../ProductStore";
-
+import useAxiosFetch from "../hooks/useAxiosFetch";
 const dataContextCreated = createContext({});
+
 const DataContext = ({ children }) => {
+    const {data,isLoading,fetchError} = useAxiosFetch("https://eggys.onrender.com/jazzyburger/all")
   const [products, setProducts] = useState(data);
   const [cart, setCart] = useState([]);
 
+  useEffect(()=>{
+    setProducts(data.map((product)=>{
+        product.id= product._id
+        product.count = 1
+        delete product._id
+        return product
+  }))
+  },[data])
   const handleIncrease = (id) => {
     const newProducts = products.map((product) => {
       if (product.id === id) {
@@ -50,6 +59,8 @@ const DataContext = ({ children }) => {
     handleReduce,
     toCartButton,
     cart,
+    isLoading,
+    fetchError
   };
   return (
     <dataContextCreated.Provider value={utili}>
