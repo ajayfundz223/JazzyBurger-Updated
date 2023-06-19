@@ -27,7 +27,7 @@ const useAxiosFetch =(dataUrl)=>{
                     setData([]);
                 }
             }finally{
-                isMounted && setTimeout(()=>setIsLoading(false),3000)
+                isMounted && setIsLoading(false)
             }
         }
         fetchData(dataUrl);
