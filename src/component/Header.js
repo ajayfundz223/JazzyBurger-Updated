@@ -5,7 +5,7 @@ import "../styles/Header.css";
 
 const Header = () => {
   return (
-    <header className="container-lg">
+    <header className="container-lg fixed-top">
       <HeaderIcon />
       <HeaderAcess />
     </header>

@@ -4,13 +4,13 @@ import useAxiosFetch from "../hooks/useAxiosFetch";
 const dataContextCreated = createContext({});
 
 const DataContext = ({ children }) => {
-    const {data,isLoading,fetchError} = useAxiosFetch("https://eggys.onrender.com/jazzyburger/all")
+  const {data,isLoading,fetchError} = useAxiosFetch("http://127.0.0.1:8000/api/product")
   const [products, setProducts] = useState(data);
   const [cart, setCart] = useState([]);
 
   useEffect(()=>{
     setProducts(data.map((product)=>{
-        product.id= product._id
+        product.id= product.id
         product.count = 1
         delete product._id
         return product

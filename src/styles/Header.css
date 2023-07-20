@@ -55,6 +55,7 @@ header {
 }
 
 .hero-banner {
+  margin-top: 6.5rem;
   margin-bottom: 3%;
   height: 65vh;
   transition: 1s all;

@@ -7,7 +7,7 @@ const Card = ({ product, toCartButton }) => {
   return (
     <div className="card" onDoubleClick={() => toCartButton(product.id)}>
       <Favourite />
-      <img src={product.image} className="card-img-top " alt="..." />
+      <img src={product.image} className="card-img-top " alt="..." width={200} height={200} />
       <div className="card-body">
         <h2 className="card-title">{product.title}</h2>
         <div className="d-flex justify-content-between align-items-center">
